@@ -3,6 +3,9 @@
     "Profile": "Profile",
     "Edit": "Edit",
     "Your name": "Your name",
-    "Your lastname": "Your lastname"
+    "Your lastname": "Your lastname",
+    "Try to reload the page": "Try to reload the page",
+    "Error occured when fetching data": "Error occured when fetching data",
+    "Cancel": "Cancel"
   }
 }

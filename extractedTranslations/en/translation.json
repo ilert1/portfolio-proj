@@ -1,5 +1,7 @@
 {
+  "Cancel": "Cancel",
   "Edit": "Edit",
+  "Error occured when fetching data": "Error occured when fetching data",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
       "": ""
@@ -7,11 +9,18 @@
   },
   "PROFILE_PAGE": "PROFILE_PAGE",
   "Profile": "Profile",
+  "Try to reload the page": "Try to reload the page",
   "Your lastname": "Your lastname",
   "Your name": "Your name",
   "decrement": "decrement",
+  "error_happened": "error_happened",
   "increment": "increment",
+  "profile": {
+    "'Error occured when fetching data'": "'Error occured when fetching data'",
+    "'Your name'": "'Your name'"
+  },
   "throw error": "throw error",
+  "try_to_reload": "try_to_reload",
   "Введите username": "Введите username",
   "Введите пароль": "Введите пароль",
   "Войти": "Войти",

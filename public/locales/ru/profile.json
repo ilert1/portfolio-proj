@@ -1,8 +1,11 @@
 {
-    "profile": {
-        "Profile": "Профиль",
-        "Edit": "Редактировать",
-        "Your name": "Ваше имя",
-        "Your lastname": "Ваша фамилия"
-    }
+  "profile": {
+    "Profile": "Профиль",
+    "Edit": "Редактировать",
+    "Your name": "Ваше имя",
+    "Your lastname": "Ваша фамилия",
+    "Try to reload the page": "Попробуйте перезагрузить страницу",
+    "Error occured when fetching data": "Произошла ошибка при получении данных",
+    "Cancel": "Отмена"
+  }
 }
