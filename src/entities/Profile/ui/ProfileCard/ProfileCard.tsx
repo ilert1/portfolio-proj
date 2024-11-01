@@ -18,10 +18,11 @@ export const ProfileCard = ({ className }: ProfileCardProps) => {
     const data = useSelector(getProfileData);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
+
     return (
         <div className={classNames(cls.ProfileCard, {}, [className])}>
-            <div className={cls.header}>
-                <div>
+            <div>
+                <div className={cls.header}>
                     <Text title={t("Profile")} />
                     <Button className={cls.editBtn} theme={ButtonTheme.OUTLINE}>
                         {t("Edit")}

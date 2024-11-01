@@ -53,6 +53,7 @@ module.exports = {
         quotes: [2, "double", { avoidEscape: true }],
         "comma-dangle": "off",
         "linebreak-style": "off",
+        "no-undef": "off",
     },
     globals: {
         __IS_DEV__: true,
