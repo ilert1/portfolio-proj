@@ -1,5 +1,7 @@
 {
+  "Avatar": "Avatar",
   "Cancel": "Cancel",
+  "City": "City",
   "Edit": "Edit",
   "Error occured when fetching data": "Error occured when fetching data",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
@@ -9,7 +11,10 @@
   },
   "PROFILE_PAGE": "PROFILE_PAGE",
   "Profile": "Profile",
+  "Save": "Save",
   "Try to reload the page": "Try to reload the page",
+  "Username": "Username",
+  "Your age": "Your age",
   "Your lastname": "Your lastname",
   "Your name": "Your name",
   "decrement": "decrement",

@@ -46,8 +46,43 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     );
 
     const onChangeLastname = useCallback(
-        (value: string) => {
+        (value?: string) => {
             dispatch(profileActions.updateProfile({ lastname: value || "" }));
+        },
+        [dispatch]
+    );
+
+    const onChangeCity = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ city: value || "" }));
+        },
+        [dispatch]
+    );
+
+    const onChangeAge = useCallback(
+        (value?: string) => {
+            if (
+                typeof Number(value) === "number" &&
+                Number.isFinite(Number(value))
+            ) {
+                dispatch(
+                    profileActions.updateProfile({ age: Number(value || 0) })
+                );
+            }
+        },
+        [dispatch]
+    );
+
+    const onChangeUsername = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ city: value || "" }));
+        },
+        [dispatch]
+    );
+
+    const onChangeAvatar = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ city: value || "" }));
         },
         [dispatch]
     );
@@ -62,6 +97,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     error={error}
                     onChangeFirstname={onChangeFirstname}
                     onChangeLastname={onChangeLastname}
+                    onChangeCity={onChangeCity}
+                    onChangeAge={onChangeAge}
+                    onChangeUsername={onChangeUsername}
+                    onChangeAvatar={onChangeAvatar}
                     readonly={readonly}
                 />
             </div>

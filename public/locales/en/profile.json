@@ -1,11 +1,17 @@
 {
-  "profile": {
     "Profile": "Profile",
     "Edit": "Edit",
     "Your name": "Your name",
     "Your lastname": "Your lastname",
     "Try to reload the page": "Try to reload the page",
     "Error occured when fetching data": "Error occured when fetching data",
-    "Cancel": "Cancel"
-  }
+    "Cancel": "Cancel",
+    "Save": "Save",
+    "profile.Cancel": "Cancel",
+    "Your age": "Your age",
+    "City": "City",
+    "profile.Username": "Username",
+    "Username": "Username",
+    "Avatar": "Avatar",
+    "profile.Avatar": "Avatar"
 }

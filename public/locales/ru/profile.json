@@ -1,11 +1,17 @@
 {
-  "profile": {
-    "Profile": "Профиль",
     "Edit": "Редактировать",
     "Your name": "Ваше имя",
     "Your lastname": "Ваша фамилия",
     "Try to reload the page": "Попробуйте перезагрузить страницу",
     "Error occured when fetching data": "Произошла ошибка при получении данных",
-    "Cancel": "Отмена"
-  }
+    "Cancel": "Отмена",
+    "Profile": "Профиль",
+    "Save": "Сохранить",
+    "profile.Cancel": "Отмена",
+    "Your age": "Ваш возраст",
+    "City": "Город",
+    "profile.Username": "Имя пользователя",
+    "Username": "Имя пользователя",
+    "Avatar": "Аватар",
+    "profile.Avatar": "Аватар"
 }
