@@ -12,6 +12,9 @@
   "PROFILE_PAGE": "PROFILE_PAGE",
   "Profile": "Profile",
   "Save": "Save",
+  "Select currency": "Select currency",
+  "Select_country": "",
+  "Select_currency": "Select_currency",
   "Try to reload the page": "Try to reload the page",
   "Username": "Username",
   "Your age": "Your age",
@@ -22,7 +25,8 @@
   "increment": "increment",
   "profile": {
     "'Error occured when fetching data'": "'Error occured when fetching data'",
-    "'Your name'": "'Your name'"
+    "'Your name'": "'Your name'",
+    "Username": "Username"
   },
   "throw error": "throw error",
   "try_to_reload": "try_to_reload",

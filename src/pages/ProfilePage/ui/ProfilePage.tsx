@@ -19,6 +19,8 @@ import {
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
+import { Currency } from "entities/Currency";
+import { Country } from "entities/Country";
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -62,6 +64,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const onChangeAge = useCallback(
         (value?: string) => {
             if (
+                // eslint-disable-next-line operator-linebreak
                 typeof Number(value) === "number" &&
                 Number.isFinite(Number(value))
             ) {
@@ -86,6 +89,18 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         },
         [dispatch]
     );
+    const onChangeCurrency = useCallback(
+        (currency?: Currency) => {
+            dispatch(profileActions.updateProfile({ currency }));
+        },
+        [dispatch]
+    );
+    const onChangeCountry = useCallback(
+        (country?: Country) => {
+            dispatch(profileActions.updateProfile({ country }));
+        },
+        [dispatch]
+    );
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -101,6 +116,8 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     onChangeAge={onChangeAge}
                     onChangeUsername={onChangeUsername}
                     onChangeAvatar={onChangeAvatar}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
                     readonly={readonly}
                 />
             </div>

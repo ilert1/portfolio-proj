@@ -13,5 +13,8 @@
     "profile.Username": "Имя пользователя",
     "Username": "Имя пользователя",
     "Avatar": "Аватар",
-    "profile.Avatar": "Аватар"
+    "profile.Avatar": "Аватар",
+    "Select_currency": "Выберите валюту",
+    "profile.Select_currency": "Выберите валюту",
+    "Select_country": "Выберите страну"
 }

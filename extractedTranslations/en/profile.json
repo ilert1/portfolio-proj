@@ -6,9 +6,14 @@
   "Error occured when fetching data": "",
   "Profile": "",
   "Save": "",
+  "Select currency": "",
+  "Select_currency": "",
   "Try to reload the page": "",
   "Username": "",
   "Your age": "",
   "Your lastname": "",
-  "Your name": ""
+  "Your name": "",
+  "profile": {
+    "Username": ""
+  }
 }

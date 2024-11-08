@@ -13,5 +13,8 @@
     "profile.Username": "Username",
     "Username": "Username",
     "Avatar": "Avatar",
-    "profile.Avatar": "Avatar"
+    "profile.Avatar": "Avatar",
+    "Select_currency": "Select currency",
+    "profile.Select_currency": "Select currency",
+    "Select_country": "Select country"
 }
