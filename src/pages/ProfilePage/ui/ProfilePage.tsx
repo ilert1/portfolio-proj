@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 import {
     fetchProfileData,
     getProfileData,
@@ -5,6 +6,7 @@ import {
     getProfileForm,
     getProfileIsLoading,
     getProfileReadonly,
+    getProfileValidateErrors,
     profileActions,
     ProfileCard,
     profileReducer,
@@ -18,9 +20,11 @@ import {
     ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
+import { Text, TextTheme } from "shared/ui/Text/Text";
+import { ValidateProfileError } from "entities/Profile/model/types/profile";
+import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -30,11 +34,23 @@ interface ProfilePageProps {
     className?: string;
 }
 const ProfilePage = ({ className }: ProfilePageProps) => {
+    const { t } = useTranslation("profile");
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
+    const validateErrors = useSelector(getProfileValidateErrors);
+
+    const validateErrorTranslates = {
+        [ValidateProfileError.SERVER_ERROR]: t("Server error when saving"),
+        [ValidateProfileError.INCORRECT_COUNTRY]: t("Wrong region"),
+        [ValidateProfileError.NO_DATA]: t("Data is not set"),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t(
+            "Name and secondname are necessary"
+        ),
+        [ValidateProfileError.INCORRECT_AGE]: t("Wrong age"),
+    };
 
     useEffect(() => {
         dispatch(fetchProfileData());
@@ -106,6 +122,16 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames("", {}, [className])}>
                 <ProfilePageHeader />
+                {validateErrors?.length &&
+                    validateErrors.map((err) => {
+                        return (
+                            <Text
+                                key={err}
+                                theme={TextTheme.ERROR}
+                                text={validateErrorTranslates[err]}
+                            />
+                        );
+                    })}
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}

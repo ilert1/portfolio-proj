@@ -1,7 +1,9 @@
 {
+  "": "",
   "Avatar": "Avatar",
   "Cancel": "Cancel",
   "City": "City",
+  "Data is not set": "Data is not set",
   "Edit": "Edit",
   "Error occured when fetching data": "Error occured when fetching data",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
@@ -9,14 +11,20 @@
       "": ""
     }
   },
+  "Name and secondname are necessary": "Name and secondname are necessary",
   "PROFILE_PAGE": "PROFILE_PAGE",
   "Profile": "Profile",
   "Save": "Save",
   "Select currency": "Select currency",
   "Select_country": "Select_country",
   "Select_currency": "Select_currency",
+  "Server error when saving": "Server error when saving",
   "Try to reload the page": "Try to reload the page",
   "Username": "Username",
+  "Wrong age": "Wrong age",
+  "Wrong region": "Wrong region",
+  "Wrong user data": "Wrong user data",
+  "You set the wrong country": "You set the wrong country",
   "Your age": "Your age",
   "Your lastname": "Your lastname",
   "Your name": "Your name",
