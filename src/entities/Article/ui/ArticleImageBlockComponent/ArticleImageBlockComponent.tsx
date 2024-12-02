@@ -1,19 +1,26 @@
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
-import cls from "./ArticleImageBlockComponent.module.scss"
+import cls from "./ArticleImageBlockComponent.module.scss";
 
 interface ArticleImageBlockComponentProps {
     className?: string;
 }
 
-export const ArticleImageBlockComponent = (props: ArticleImageBlockComponentProps) => {
+export const ArticleImageBlockComponent = (
+    props: ArticleImageBlockComponentProps
+) => {
     const { t } = useTranslation();
 
     const { className } = props;
 
     return (
         <div
-            className={classNames(cls.ArticleImageBlockComponent, {}, [className])}
-        ></div>
+            className={classNames(cls.ArticleImageBlockComponent, {}, [
+                className,
+            ])}
+            // eslint-disable-next-line i18next/no-literal-string
+        >
+            AticleBlockComponent
+        </div>
     );
 };
