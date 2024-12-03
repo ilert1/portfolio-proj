@@ -14,9 +14,13 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from "entities/Article/model/selectors/articleDetails";
-import cls from "./ArticleDetails.module.scss";
-import { Text, TextAlign } from "shared/ui/Text/Text";
+import EyeIcon from "shared/assets/icons/eye-20-20.svg";
+import CalendarIcon from "shared/assets/icons/calendar-20-20.svg";
+import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
+import { Avatar } from "shared/ui/Avatar/Avatar";
+import cls from "./ArticleDetails.module.scss";
+import { Icon } from "shared/ui/Icon/Icon";
 
 interface ArticleDetailsProps {
     className?: string;
@@ -32,8 +36,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     const { className, id } = props;
     const dispatch = useAppDispatch();
-    // const isLoading = useSelector(getArticleDetailsIsLoading);
-    const isLoading = true;
+    const isLoading = useSelector(getArticleDetailsIsLoading);
     const article = useSelector(getArticleDetailsData);
     const error = useSelector(getArticleDetailsError);
 
@@ -64,7 +67,33 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             />
         );
     } else {
-        content = <div>Article details</div>;
+        content = (
+            <>
+                <div className={cls.avatarWrapper}>
+                    <Avatar
+                        size={200}
+                        src={article?.img}
+                        className={cls.avatar}
+                    />
+                </div>
+                <Text
+                    className={cls.title}
+                    title={article?.title}
+                    text={article?.subtitle}
+                    size={TextSize.L}
+                />
+                <div className={cls.articleInfo}>
+                    <Icon Svg={EyeIcon} className={cls.icon} />
+                    <Text text={String(article?.views)} />
+                </div>
+
+                <div className={cls.articleInfo}>
+                    <Icon Svg={CalendarIcon} className={cls.icon} />
+
+                    <Text text={article?.createdAt} />
+                </div>
+            </>
+        );
     }
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
