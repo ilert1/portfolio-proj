@@ -52,6 +52,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             case ArticleBlockType.CODE:
                 return (
                     <ArticleCodeBlockComponent
+                        key={block.id}
                         block={block}
                         className={cls.block}
                     />
@@ -59,6 +60,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             case ArticleBlockType.IMAGE:
                 return (
                     <ArticleImageBlockComponent
+                        key={block.id}
                         block={block}
                         className={cls.block}
                     />
@@ -66,6 +68,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             case ArticleBlockType.TEXT:
                 return (
                     <ArticleTextBlockComponent
+                        key={block.id}
                         block={block}
                         className={cls.block}
                     />
@@ -76,7 +79,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     }, []);
 
     useEffect(() => {
-        dispatch(fetchArticleById(id));
+        if (__PROJECT__ !== "storybook") dispatch(fetchArticleById(id));
     }, [dispatch, id]);
     let content;
     if (isLoading) {

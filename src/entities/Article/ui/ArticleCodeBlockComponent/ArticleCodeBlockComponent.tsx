@@ -22,7 +22,7 @@ export const ArticleCodeBlockComponent = memo(
                     className,
                 ])}
             >
-                <Code>{block.code}</Code>
+                <Code text={block.code} />
             </div>
         );
     }

@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { memo } from "react";
 import { ArticleImageBlock } from "entities/Article/model/types/article";
@@ -12,8 +11,6 @@ interface ArticleImageBlockComponentProps {
 
 export const ArticleImageBlockComponent = memo(
     (props: ArticleImageBlockComponentProps) => {
-        const { t } = useTranslation();
-
         const { className, block } = props;
 
         return (

@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    children: `import React from "react";
+    text: `import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Code } from "shared/ui/Code/Code";
 
