@@ -1,5 +1,3 @@
-import { StateSchema } from "app/providers/StoreProvider";
+import { StateSchema } from 'app/providers/StoreProvider';
 
-export const getProfileValidateErrors = (state: StateSchema) =>
-    // eslint-disable-next-line implicit-arrow-linebreak
-    state?.profile?.validateError;
+export const getProfileValidateErrors = (state: StateSchema) => state.profile?.validateErrors;

@@ -1,20 +1,21 @@
-import { classNames, Mods } from "shared/lib/classNames/classNames";
-import { memo } from "react";
-import cls from "./Text.module.scss";
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { memo } from 'react';
+import cls from './Text.module.scss';
 
 export enum TextTheme {
-    PRIMARY = "primary",
-    ERROR = "error",
+    PRIMARY = 'primary',
+    ERROR = 'error',
 }
 
 export enum TextAlign {
-    RIGHT = "right",
-    LEFT = "left",
-    CENTER = "center",
+    RIGHT = 'right',
+    LEFT = 'left',
+    CENTER = 'center',
 }
+
 export enum TextSize {
-    M = "size_m",
-    L = "size_l",
+    M = 'size_m',
+    L = 'size_l',
 }
 
 interface TextProps {

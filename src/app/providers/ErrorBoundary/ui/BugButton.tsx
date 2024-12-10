@@ -1,6 +1,6 @@
-import { Button } from "shared/ui/Button/Button";
-import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Button } from 'shared/ui/Button/Button';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // Компонент для тестирования ErrorBoundary
 export const BugButton = () => {
@@ -19,7 +19,7 @@ export const BugButton = () => {
         <Button
             onClick={onThrow}
         >
-            {t("throw error")}
+            {t('throw error')}
         </Button>
     );
 };

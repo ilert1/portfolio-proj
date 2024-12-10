@@ -14,20 +14,21 @@
     margin-top: 15px;
 }
 
-.avatarWrapper {
+.articleInfo {
     display: flex;
-    width: 100%;
-    justify-content: center;
+    align-items: center;
 }
 
 .icon {
     margin-right: 8px;
 }
 
-.articleInfo {
+.avatarWrapper {
     display: flex;
-    align-items: center;
+    width: 100%;
+    justify-content: center;
 }
+
 .block {
     margin-top: 16px;
 }

@@ -1,45 +1,40 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "app/providers/ThemeProvider";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import { Country } from "entities/Country";
-import { Currency } from "entities/Currency";
-import avatar from "shared/assets/tests/storybook.jpg";
-import { ProfileCard } from "./ProfileCard";
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ProfileCard } from 'entities/Profile';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
+import avatar from 'shared/assets/tests/storybook.jpg';
 
 export default {
-    title: "entities/ProfileCard",
+    title: 'entities/ProfileCard',
     component: ProfileCard,
     argTypes: {
-        backgroundColor: { control: "color" },
+        backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof ProfileCard>;
 
-const Template: ComponentStory<typeof ProfileCard> = (args) => (
-    <ProfileCard {...args} />
-);
+const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
 
-export const Normal = Template.bind({});
-Normal.args = {
+export const Primary = Template.bind({});
+Primary.args = {
     data: {
-        age: 12,
+        username: 'admin',
+        age: 22,
+        country: Country.Ukraine,
+        lastname: 'ulbi tv',
+        first: 'asd',
+        city: 'asf',
+        currency: Currency.USD,
         avatar,
-        city: "Yerevan",
-        country: Country.Armenia,
-        currency: Currency.AMD,
-        first: "David",
-        lastname: "Grig",
-        username: "ilert",
     },
 };
-Normal.decorators = [StoreDecorator({})];
-
-export const Loading = Template.bind({});
-Loading.args = { isLoading: true };
-Loading.decorators = [StoreDecorator({})];
 
 export const withError = Template.bind({});
 withError.args = {
-    error: "true",
+    error: 'true',
 };
-withError.decorators = [StoreDecorator({})];
+
+export const Loading = Template.bind({});
+Loading.args = {
+    isLoading: true,
+};

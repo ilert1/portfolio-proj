@@ -1,8 +1,10 @@
 {
     "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
     "prettier.tabWidth": 4,
-    "prettier.useTabs": false,
-    "i18n-ally.keystyle": "flat",
-    "i18n-ally.extract.keygenStrategy": "slug",
-    "i18n-ally.namespace": false
+    "prettier.useTabs": false
+    // "i18n-ally.keystyle": "flat",
+    // "i18n-ally.extract.keygenStrategy": "slug",
+    // "i18n-ally.namespace": false,
+    // "i18n-ally.pathMatcher": "**/*.json",
+    // "i18n-ally.disablePathParsing": true
 }
