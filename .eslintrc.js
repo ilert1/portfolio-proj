@@ -58,6 +58,7 @@ module.exports = {
         "object-curly-newline": "off",
         "arrow-body-style": "off",
         "implicit-arrow-linebreak": "off",
+        "react/no-array-index-key": "off",
     },
     globals: {
         __IS_DEV__: true,

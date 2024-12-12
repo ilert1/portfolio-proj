@@ -1,17 +1,37 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { CommentList } from './CommentList';
+import { CommentList } from "./CommentList";
 
 export default {
-    title: 'shared/CommentList',
+    title: "entities/Comment/CommentList",
     component: CommentList,
     argTypes: {
-        backgroundColor: { control: 'color' },
+        backgroundColor: { control: "color" },
     },
 } as ComponentMeta<typeof CommentList>;
 
-const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />;
+const Template: ComponentStory<typeof CommentList> = (args) => (
+    <CommentList {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+    comments: [
+        {
+            id: "1",
+            text: "abc",
+            user: { id: "1", username: "abc" },
+        },
+        {
+            id: "2",
+            text: "cba",
+            user: { id: "2", username: "pda" },
+        },
+    ],
+};
+export const Loading = Template.bind({});
+Loading.args = {
+    comments: [],
+    isLoading: true,
+};

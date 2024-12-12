@@ -1,4 +1,6 @@
 {
+  "": "",
+  "Back to list": "Back to list",
   "Enter comment text": "Enter comment text",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
@@ -6,6 +8,8 @@
     }
   },
   "PROFILE PAGE": "PROFILE PAGE",
+  "Read ": "Read ",
+  "Read more": "Read more",
   "Send": "Send",
   "decrement": "decrement",
   "increment": "increment",
