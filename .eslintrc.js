@@ -60,6 +60,7 @@ module.exports = {
         "implicit-arrow-linebreak": "off",
         "react/no-array-index-key": "off",
         "operator-linebreak": "off",
+        "function-paren-newline": "off",
     },
     globals: {
         __IS_DEV__: true,
