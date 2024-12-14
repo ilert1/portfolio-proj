@@ -59,6 +59,7 @@ module.exports = {
         "arrow-body-style": "off",
         "implicit-arrow-linebreak": "off",
         "react/no-array-index-key": "off",
+        "operator-linebreak": "off",
     },
     globals: {
         __IS_DEV__: true,
