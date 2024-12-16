@@ -11,9 +11,6 @@ i18n.use(Backend)
         fallbackLng: "en",
         debug: __IS_DEV__,
 
-        ns: ["translation", "about", "article-details", "main", "profile"],
-        defaultNS: "translation",
-
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         },

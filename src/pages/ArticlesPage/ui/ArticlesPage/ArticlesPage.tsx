@@ -2,8 +2,7 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
-import { ArticleList, ArticleViewSelector } from "entities/Article";
-import { ArticleView } from "entities/Article/model/types/article";
+import { ArticleList } from "entities/Article";
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -15,7 +14,6 @@ import { Page } from "widgets/Page/Page";
 import { fetchNextArticlePage } from "../../model/services/fetchNextArticlePage/fetchNextArticlePage";
 import cls from "./ArticlesPage.module.scss";
 import {
-    articlesPageActions,
     articlesPageReducer,
     getArticles,
 } from "../../model/slice/ArticlesPageSlice/ArticlesPageSlice";
@@ -25,6 +23,7 @@ import {
     getArticlesPageView,
 } from "../../model/selectors/articlesPageSelectors";
 import { initAriclesPage } from "../../model/services/initAriclesPage/initAriclesPage";
+import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
 
 interface ArticlesPageProps {
     className?: string;
@@ -43,13 +42,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const error = useSelector(getArticlesPageError);
     const view = useSelector(getArticlesPageView);
 
-    const onChangeView = useCallback(
-        (view: ArticleView) => {
-            dispatch(articlesPageActions.setView(view));
-        },
-        [dispatch]
-    );
-
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlePage());
     }, [dispatch]);
@@ -64,11 +56,12 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
-                <ArticleViewSelector view={view} onViewClick={onChangeView} />
+                <ArticlesPageFilters />
                 <ArticleList
                     isLoading={isLoading}
                     view={view}
                     articles={articles}
+                    className={cls.list}
                 />
             </Page>
         </DynamicModuleLoader>
