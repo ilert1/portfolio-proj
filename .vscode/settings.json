@@ -4,7 +4,10 @@
     "prettier.useTabs": false,
     "i18n-ally.namespace": true,
     "i18n-ally.pathMatcher": "{locale}/{namespace}.json",
-    "i18n-ally.keystyle": "auto",
+    "i18n-ally.keystyle": "nested",
     "i18n-ally.defaultNamespace": "translation",
-    "i18n-ally.enabledFrameworks": ["react-i18next"]
+    "i18n-ally.enabledFrameworks": ["react-i18next"],
+    "jestrunner.configPath": "config/jest/jest.config.ts",
+    "cssCustomProperties.files": ["src/app/styles/**/*.scss"],
+    "cssCustomProperties.languages": ["scss"]
 }

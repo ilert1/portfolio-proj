@@ -4,5 +4,16 @@
   "Read more": "Читать далее",
   "Back to list": "Вернуться к списку",
   "Sort by": "Сортировать по",
-  "Search": "Поиск"
+  "Search": "Поиск",
+  "By": "По",
+  "Ascending": "возрастанию",
+  "Descending": "Убыванию",
+  "Creation date": "дата создания",
+  "name": "названию",
+  "views": "просмотрам",
+  "All articles": "Все статьи",
+  "IT": "ИТ",
+  "Economics": "Экономика",
+  "Science": "Наука",
+  "Articles not found": "Статьи не найдены"
 }

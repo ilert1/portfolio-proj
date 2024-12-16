@@ -4,6 +4,16 @@
   "Read more": "Read more",
   "Back to list": "Back to list",
   "Sort by": "Sort by",
-  "Search": "Search"
-
+  "Search": "Search",
+  "By": "By",
+  "Ascending": "ascending",
+  "Descending": "descending",
+  "Creation date": "creation date",
+  "name": "name",
+  "views": "views",
+  "All articles": "All articles",
+  "IT": "IT",
+  "Economics": "Economics",
+  "Science": "Science",
+  "Articles not found": "Articles not found"
 }

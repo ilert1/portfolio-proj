@@ -1,7 +1,15 @@
 {
   "": "",
+  "All articles": "All articles",
+  "Articles not found": "Articles not found",
+  "Ascending": "Ascending",
   "Back to list": "Back to list",
+  "By": "By",
+  "Creation date": "Creation date",
+  "Descending": "Descending",
+  "Economics": "Economics",
   "Enter comment text": "Enter comment text",
+  "IT": "IT",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
       "": ""
@@ -10,12 +18,15 @@
   "PROFILE PAGE": "",
   "Read ": "",
   "Read more": "",
+  "Science": "Science",
   "Search": "Search",
   "Send": "Send",
   "Sort by": "",
   "decrement": "decrement",
   "increment": "increment",
+  "name": "name",
   "throw error": "throw error",
+  "views": "views",
   "Ваш возраст": "Ваш возраст",
   "Ваша фамилия": "Ваша фамилия",
   "Ваше имя": "Ваше имя",

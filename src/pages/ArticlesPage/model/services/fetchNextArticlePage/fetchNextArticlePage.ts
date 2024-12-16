@@ -1,5 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { ThunkConfig } from "app/providers/StoreProvider";
+import { ArticleSortField } from "entities/Article";
+import { SortOrder } from "shared/types";
 import {
     getArticlesPageHasMore,
     getArticlesPageIsLoading,
@@ -20,6 +22,6 @@ export const fetchNextArticlePage = createAsyncThunk<
 
     if (hasMore && !isLoading) {
         dispatch(articlesPageActions.setPage(page + 1));
-        dispatch(fetchArticlesList({ page: page + 1 }));
+        dispatch(fetchArticlesList({}));
     }
 });
