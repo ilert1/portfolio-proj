@@ -53,6 +53,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         },
         [dispatch, fetchData]
     );
+
     const onChangeSort = useCallback(
         (newSort: ArticleSortField) => {
             dispatch(articlesPageActions.setSort(newSort));
@@ -61,6 +62,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         },
         [dispatch, fetchData]
     );
+
     const onChangeOrder = useCallback(
         (order: SortOrder) => {
             dispatch(articlesPageActions.setOrder(order));
@@ -69,6 +71,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         },
         [dispatch, fetchData]
     );
+
     const onChangeSearch = useCallback(
         (search: string) => {
             dispatch(articlesPageActions.setSearch(search));
@@ -77,15 +80,15 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         },
         [dispatch, debouncedFetchData]
     );
+
     const onChangeType = useCallback(
         (value: ArticleType) => {
             dispatch(articlesPageActions.setType(value));
             dispatch(articlesPageActions.setPage(1));
-            debouncedFetchData();
+            fetchData();
         },
-        [dispatch, debouncedFetchData]
+        [dispatch, fetchData]
     );
-
     return (
         <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
             <div className={cls.sortWrapper}>
@@ -112,8 +115,3 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         </div>
     );
 });
-
-// "javascript",
-// "javascriptreact",
-// "typescript",
-// "typescriptreact",

@@ -19,3 +19,24 @@
     display: flex;
 }
 
+* ::-webkit-scrollbar {
+    width: 12px;
+    height: 8px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+    background: var(--card-bg);
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+    background: var(--inverted-primary-color);
+    border-radius: 20px;
+    border: 2px solid var(--primary-color);
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

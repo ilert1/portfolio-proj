@@ -64,6 +64,8 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                     view={view}
                     articles={articles}
                     className={cls.list}
+                    // eslint-disable-next-line i18next/no-literal-string
+                    target="_blank"
                 />
             </Page>
         </DynamicModuleLoader>
