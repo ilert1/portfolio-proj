@@ -16,5 +16,10 @@
   "Economics": "Economics",
   "Science": "Science",
   "Articles not found": "Articles not found",
-  "We suggest": "We suggest"
+  "We suggest": "We suggest",
+  "Edit": "Edit",
+  "translation": {
+    "Create article": "Create article"
+  },
+  "Create article": "Create article"
 }
