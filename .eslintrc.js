@@ -17,7 +17,13 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
+    plugins: [
+        "react",
+        "@typescript-eslint",
+        "i18next",
+        "react-hooks",
+        "ulbi-tv-plugin",
+    ],
     rules: {
         "react/jsx-indent": [2, 4],
         "react/jsx-indent-props": [2, 4],
@@ -61,6 +67,7 @@ module.exports = {
         "react/no-array-index-key": "off",
         "operator-linebreak": "off",
         "function-paren-newline": "off",
+        "ulbi-tv-plugin/path-checker": 2,
     },
     globals: {
         __IS_DEV__: true,
