@@ -1,19 +1,8 @@
-import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import {memo} from 'react';
-import cls from "./VStack.module.scss"
+import { Flex, FlexProps } from "../Flex/Flex";
 
-interface VStackProps {
-    className?: string;
-}
+export type VStackProps = Omit<FlexProps, "direction">;
 
-export const VStack = memo((props: VStackProps) => {
-    const { className } = props;
-    const { t } = useTranslation();
-
-    return (
-        <div
-            className={classNames(cls.VStack, {}, [className])}
-        ></div>
-    );
-});
+export const VStack = (props: VStackProps) => {
+    const { align = "start" } = props;
+    return <Flex {...props} direction="column" align={align} />;
+};

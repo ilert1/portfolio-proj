@@ -19,11 +19,11 @@
 }
 
 .alignStart {
-    align-items: center;
+    align-items: flex-start;
 }
 
 .alignCenter {
-    align-items: flex-start;
+    align-items: center;
 }
 
 .alignEnd {
@@ -49,4 +49,8 @@
 }
 .gap32 {
     gap: 32px;
+}
+
+.max {
+    width: 100%;
 }

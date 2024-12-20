@@ -41,6 +41,18 @@ Column.args = {
 
 export const RowGap4 = Template.bind({});
 RowGap4.args = {
+    gap: "4",
+    children: (
+        <>
+            <div>First</div>
+            <div>Second</div>
+            <div>Third</div>
+            <div>Fourth</div>
+        </>
+    ),
+};
+export const ColumnGap4 = Template.bind({});
+ColumnGap4.args = {
     direction: "column",
     gap: "4",
     children: (
