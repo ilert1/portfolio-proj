@@ -1,8 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Select } from 'shared/ui/Select/Select';
-import { memo, useCallback } from 'react';
-import { Country } from '../../model/types/country';
+import { classNames } from "shared/lib/classNames/classNames";
+import { useTranslation } from "react-i18next";
+import { Select } from "shared/ui/Select/Select";
+import { memo, useCallback } from "react";
+import { Country } from "../../model/types/country";
+import { ListBox } from "shared/ui/ListBox/ListBox";
 
 interface CountrySelectProps {
     className?: string;
@@ -19,23 +20,38 @@ const options = [
     { value: Country.Ukraine, content: Country.Ukraine },
 ];
 
-export const CountrySelect = memo(({
-    className, value, onChange, readonly,
-}: CountrySelectProps) => {
-    const { t } = useTranslation();
+export const CountrySelect = memo(
+    ({ className, value, onChange, readonly }: CountrySelectProps) => {
+        const { t } = useTranslation();
 
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Country);
-    }, [onChange]);
+        const onChangeHandler = useCallback(
+            (value: string) => {
+                onChange?.(value as Country);
+            },
+            [onChange]
+        );
 
-    return (
-        <Select
-            className={classNames('', {}, [className])}
-            label={t('Укажите страну')}
-            options={options}
-            value={value}
-            onChange={onChangeHandler}
-            readonly={readonly}
-        />
-    );
-});
+        return (
+            <ListBox
+                onChange={onChangeHandler}
+                value={value}
+                defaultValue="Select country"
+                items={options}
+                readonly={readonly}
+                direction="top"
+                label={t("Укажите страну")}
+            />
+        );
+
+        // return (
+        //     <Select
+        //         className={classNames('', {}, [className])}
+        //         label={t('Укажите страну')}
+        //         options={options}
+        //         value={value}
+        //         onChange={onChangeHandler}
+        //         readonly={readonly}
+        //     />
+        // );
+    }
+);
