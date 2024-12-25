@@ -16,5 +16,11 @@ const Template: ComponentStory<typeof ListBox> = (args) => (
 );
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+    items: [
+        { content: "123456", value: "123" },
+        { content: "12345678", value: "1234" },
+        { content: "1234567890", value: "1235" },
+    ],
+};
 Normal.decorators = [];

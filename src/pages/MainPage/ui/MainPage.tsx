@@ -13,24 +13,7 @@ const MainPage = () => {
         setValue(val);
     };
 
-    return (
-        <Page>
-            {t("Главная страница")}
-            <HStack>
-                <div>aaa</div>
-                <ListBox
-                    defaultValue="Choose value"
-                    onChange={(value: string) => {}}
-                    value={undefined}
-                    items={[
-                        { value: "1", content: "123" },
-                        { value: "2", content: "1234" },
-                        { value: "3", content: "1235", disabled: true },
-                    ]}
-                />
-            </HStack>
-        </Page>
-    );
+    return <Page>{t("Главная страница")}</Page>;
 };
 
 export default MainPage;

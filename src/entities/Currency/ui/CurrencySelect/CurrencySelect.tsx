@@ -34,10 +34,11 @@ export const CurrencySelect = memo(
                 className={className}
                 value={value}
                 items={options}
+                // eslint-disable-next-line i18next/no-literal-string
                 defaultValue="Pick currency"
                 onChange={onChangeHandler}
                 readonly={readonly}
-                direction="top"
+                direction="top right"
                 label={t("Укажите валюту")}
             />
         );
