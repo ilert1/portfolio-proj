@@ -1,5 +1,7 @@
 {
   "": "",
+  "Admin": "Admin",
+  "Admin panel": "Admin panel",
   "All articles": "All articles",
   "Articles not found": "Articles not found",
   "Ascending": "Ascending",
@@ -11,6 +13,7 @@
   "Economics": "Economics",
   "Edit": "Edit",
   "Enter comment text": "Enter comment text",
+  "Forbidden Page": "Forbidden Page",
   "IT": "IT",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
