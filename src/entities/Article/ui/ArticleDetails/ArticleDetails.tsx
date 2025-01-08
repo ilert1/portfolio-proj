@@ -13,6 +13,7 @@ import { Avatar } from "shared/ui/Avatar/Avatar";
 import EyeIcon from "shared/assets/icons/eye-20-20.svg";
 import CalendarIcon from "shared/assets/icons/calendar-20-20.svg";
 import { Icon } from "shared/ui/Icon/Icon";
+import { HStack, VStack } from "shared/ui/Stack";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
@@ -24,8 +25,8 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from "../../model/selectors/articleDetails";
-import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
-import { HStack, VStack } from "shared/ui/Stack";
+import { ArticleBlock } from "../../model/types/article";
+import { ArticleBlockType } from "entities/Article/model/consts/consts";
 
 interface ArticleDetailsProps {
     className?: string;
@@ -140,6 +141,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <VStack
                 gap="16"
+                max
                 className={classNames(cls.ArticleDetails, {}, [className])}
             >
                 {content}
