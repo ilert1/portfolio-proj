@@ -13,6 +13,7 @@ interface ArticleListProps {
     isLoading?: boolean;
     view?: ArticleView;
     target?: HTMLAttributeAnchorTarget;
+    virtualized?: boolean;
 }
 
 const getSkeletions = (view: ArticleView) =>
@@ -33,6 +34,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         isLoading,
         view = ArticleView.SMALL,
         target,
+        virtualized = true,
     } = props;
     const { t } = useTranslation("article-details");
     const renderArticles = (article: Article) => {
