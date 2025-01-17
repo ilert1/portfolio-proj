@@ -20,7 +20,7 @@ export const ArticleRecommendationsList = memo(
             error,
         } = useArticlesRecommendationsList(3);
 
-        if (isLoading || error) {
+        if (isLoading || error || !articles) {
             return null;
         }
         return (
@@ -31,6 +31,7 @@ export const ArticleRecommendationsList = memo(
                     isLoading={isLoading}
                     // eslint-disable-next-line i18next/no-literal-string
                     target="_blank"
+                    virtualized={false}
                 />
             </VStack>
         );
