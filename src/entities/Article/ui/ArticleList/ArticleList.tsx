@@ -7,6 +7,7 @@ import { PAGE_ID } from "widgets/Page/Page";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import cls from "./ArticleList.module.scss";
 import { Article, ArticleView } from "../../model/types/article";
+import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeletion";
 
 interface ArticleListProps {
@@ -14,8 +15,6 @@ interface ArticleListProps {
     articles: Article[];
     isLoading?: boolean;
     target?: HTMLAttributeAnchorTarget;
-    view?: ArticleView;
-    virtualized?: boolean;
 }
 
 const getSkeletons = (view: ArticleView) =>

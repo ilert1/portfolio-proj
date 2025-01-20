@@ -6,10 +6,8 @@ import {
 
 import { StateSchema } from "app/providers/StoreProvider";
 import { Article, ArticleView } from "entities/Article";
-import {
-    ArticleSortField,
-    ArticleType,
-} from "entities/Article/model/types/article";
+import { ArticleSortField } from "entities/Article/model/consts/consts";
+import { ArticleType } from "entities/Article/model/consts/consts";
 import { SortOrder } from "shared/types";
 import { ArticlesPageSchema } from "../../types/articlesPageSchema";
 import { fetchArticlesList } from "../../services/fetchArticlesList/fetchArticlesList";
