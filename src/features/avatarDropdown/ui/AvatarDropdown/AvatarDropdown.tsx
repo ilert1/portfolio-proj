@@ -1,11 +1,10 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { Dropdown } from "shared/ui/Popups/components/Dropdown/Dropdown";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import { memo, useCallback } from "react";
+import React, { memo, useCallback } from "react";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { useSelector } from "react-redux";
+import { Avatar } from "shared/ui/Avatar/Avatar";
+import { Dropdown } from "shared/ui/Popups";
+import { useDispatch, useSelector } from "react-redux";
 import {
     getUserAuthData,
     isUserAdmin,
@@ -20,36 +19,36 @@ interface AvatarDropdownProps {
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     const { className } = props;
     const { t } = useTranslation();
-    const dispatch = useAppDispatch();
+    const dispatch = useDispatch();
     const isAdmin = useSelector(isUserAdmin);
     const isManager = useSelector(isUserManager);
     const authData = useSelector(getUserAuthData);
-
-    const isAdminPanelAvailable = isAdmin || isManager;
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
+    const isAdminPanelAvailable = isAdmin || isManager;
+
     if (!authData) {
         return null;
     }
+
     return (
         <Dropdown
             direction="bottom left"
-            trigger={<Avatar size={30} src={authData.avatar} />}
+            className={classNames("", {}, [className])}
             items={[
                 ...(isAdminPanelAvailable
                     ? [
                           {
-                              content: t("Admin panel"),
+                              content: t("Админка"),
                               href: RoutePath.admin_panel,
                           },
                       ]
                     : []),
                 {
-                    content: t("profile"),
-                    onClick: onLogout,
+                    content: t("Профиль"),
                     href: RoutePath.profile + authData.id,
                 },
                 {
@@ -57,6 +56,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
                     onClick: onLogout,
                 },
             ]}
+            trigger={<Avatar size={30} src={authData.avatar} />}
         />
     );
 });
