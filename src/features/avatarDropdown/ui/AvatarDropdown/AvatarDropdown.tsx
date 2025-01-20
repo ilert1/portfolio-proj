@@ -12,7 +12,6 @@ import {
     isUserManager,
     userActions,
 } from "entities/User";
-import cls from "./AvatarDropdown.module.scss";
 
 interface AvatarDropdownProps {
     className?: string;
@@ -38,7 +37,6 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     return (
         <Dropdown
             direction="bottom left"
-            className={cls.AvatarDropdown}
             trigger={<Avatar size={30} src={authData.avatar} />}
             items={[
                 ...(isAdminPanelAvailable
