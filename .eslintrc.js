@@ -58,6 +58,7 @@ module.exports = {
                     "role",
                     "gap",
                     "as",
+                    "border",
                 ],
             },
         ],
@@ -78,6 +79,7 @@ module.exports = {
         "operator-linebreak": "off",
         "function-paren-newline": "off",
         "ulbi-tv-plugin/path-checker": 2,
+        "react/jsx-wrap-multilines": "off",
     },
     globals: {
         __IS_DEV__: true,

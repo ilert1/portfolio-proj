@@ -6,15 +6,17 @@ import { List, ListRowProps, WindowScroller } from "react-virtualized";
 import { PAGE_ID } from "widgets/Page/Page";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import cls from "./ArticleList.module.scss";
-import { Article, ArticleView } from "../../model/types/article";
-import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
+import { Article } from "../../model/types/article";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeletion";
+import { ArticleView } from "../../model/consts/consts";
 
 interface ArticleListProps {
     className?: string;
     articles: Article[];
     isLoading?: boolean;
     target?: HTMLAttributeAnchorTarget;
+    view?: ArticleView;
+    virtualized?: boolean;
 }
 
 const getSkeletons = (view: ArticleView) =>
@@ -84,6 +86,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }
 
     return (
+        // @ts-ignore
         <WindowScroller
             scrollElement={document.getElementById(PAGE_ID) as Element}
         >
@@ -96,6 +99,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 scrollTop,
             }) => (
                 <div
+                    // @ts-ignore
                     ref={registerChild}
                     className={classNames(cls.ArticleList, {}, [
                         className,
@@ -103,6 +107,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     ])}
                 >
                     {virtualized ? (
+                        // @ts-ignore
                         <List
                             height={height ?? 700}
                             rowCount={rowCount}
