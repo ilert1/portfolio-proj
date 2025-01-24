@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 // @ts-ignore
 import withMock from "storybook-addon-mock";
-import { Article } from "entities/Article";
+import { Article } from "@/entities/Article";
 import { ArticleRecommendationsList } from "./ArticleRecommendationsList";
 
 export default {

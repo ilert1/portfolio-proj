@@ -4,11 +4,11 @@ import {
     PayloadAction,
 } from "@reduxjs/toolkit";
 
-import { StateSchema } from "app/providers/StoreProvider";
-import { Article, ArticleView } from "entities/Article";
-import { ArticleSortField } from "entities/Article/model/consts/consts";
-import { ArticleType } from "entities/Article/model/consts/consts";
-import { SortOrder } from "shared/types";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { Article, ArticleView } from "@/entities/Article";
+import { ArticleSortField } from "@/entities/Article/model/consts/consts";
+import { ArticleType } from "@/entities/Article/model/consts/consts";
+import { SortOrder } from "@/shared/types";
 import { ArticlesPageSchema } from "../../types/articlesPageSchema";
 import { fetchArticlesList } from "../../services/fetchArticlesList/fetchArticlesList";
 
