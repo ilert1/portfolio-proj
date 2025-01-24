@@ -1,8 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
 import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib/classNames/classNames";
 import { Fragment, memo, ReactNode } from "react";
 import { Menu } from "@headlessui/react";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { DropdownDirection } from "@/shared/types/ui";
 import cls from "./Dropdown.module.scss";
 import { AppLink } from "../../../AppLink/AppLink";
@@ -39,7 +39,7 @@ export const Dropdown = memo((props: DropdownProps) => {
         >
             <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, optionalClasses)}>
-                {items.map((item) => {
+                {items.map((item, index) => {
                     const content = ({ active }: { active: boolean }) => (
                         <button
                             disabled={item.disabled}
@@ -59,13 +59,18 @@ export const Dropdown = memo((props: DropdownProps) => {
                                 as={AppLink}
                                 to={item.href}
                                 disabled={item.disabled}
+                                key={`dropdownKey${index}`}
                             >
                                 {content}
                             </Menu.Item>
                         );
                     }
                     return (
-                        <Menu.Item as={Fragment} disabled={item.disabled}>
+                        <Menu.Item
+                            as={Fragment}
+                            disabled={item.disabled}
+                            key={`dropdownKey${index}`}
+                        >
                             {content}
                         </Menu.Item>
                     );
