@@ -9,7 +9,7 @@ import { Text } from "@/shared/ui/Text/Text";
 import { StarRating } from "@/shared/ui/StarRating/StarRating";
 import { Modal } from "@/shared/ui/Modal/Modal";
 import { Input } from "@/shared/ui/Input/Input";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Button, ButtonSize, ButtonTheme } from "@/shared/ui/Button/Button";
 import { Drawer } from "@/shared/ui/Drawer/Drawer";
 
 interface RatingCardProps {
@@ -54,16 +54,14 @@ export const RatingCard = memo((props: RatingCardProps) => {
     }, [onCancel, starsCount]);
 
     const modalContent = (
-        <VStack gap="32" max>
+        <>
             <Text title={feedbackTitle} />
-            <Input placeholder={t("Your feedback")} />
-            <HStack max gap="16" justify="end">
-                <Button theme={ButtonTheme.OUTLINE_RED} onClick={cancelHandler}>
-                    {t("Close")}
-                </Button>
-                <Button onClick={acceptHandler}>{t("Send")}</Button>
-            </HStack>
-        </VStack>
+            <Input
+                value={feedback}
+                onChange={setFeedback}
+                placeholder={t("Your feedback")}
+            />
+        </>
     );
 
     return (
@@ -74,12 +72,32 @@ export const RatingCard = memo((props: RatingCardProps) => {
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy>
-                    {modalContent}
+                    <VStack gap="32" max>
+                        {modalContent}
+                        <HStack max gap="16" justify="end">
+                            <Button
+                                theme={ButtonTheme.OUTLINE_RED}
+                                onClick={cancelHandler}
+                            >
+                                {t("Close")}
+                            </Button>
+                            <Button onClick={acceptHandler}>{t("Send")}</Button>
+                        </HStack>
+                    </VStack>
                 </Modal>
             </BrowserView>
             <MobileView>
                 <Drawer isOpen={isModalOpen} lazy>
-                    {modalContent}
+                    <VStack gap="32">
+                        {modalContent}
+                        <Button
+                            onClick={acceptHandler}
+                            size={ButtonSize.L}
+                            fullWidth
+                        >
+                            {t("Send")}
+                        </Button>
+                    </VStack>
                 </Drawer>
             </MobileView>
         </Card>
